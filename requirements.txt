@@ -9,3 +9,5 @@ scikit-learn
 matplotlib
 pandas
 streamlit
+cv2
+PIL
