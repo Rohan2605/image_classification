@@ -31,7 +31,7 @@ file= st.file_uploader("Please upload image", type=("jpg", "png"))
 def import_and_predict(image_data):
   single_test = image_data[:, :, 0]
   single_test = single_test.reshape(1,-1)
-  prediction = model.predict(single_test)
+  prediction = int(model.predict(single_test))
   #image_resized = cv2.resize(image_data, (8, 8))  
   #prediction = model.predict(image_resized.reshape(1,-1))
   #print('Prediction Score:\n',prediction[0])
