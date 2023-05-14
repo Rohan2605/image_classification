@@ -5,6 +5,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 from werkzeug.utils import secure_filename
+import cv2
+from  PIL import Image, ImageOps
+
 st.set_option('deprecation.showfileUploaderEncoding', False)
 # Loading saved model from Drive.
 pickle_in = open("image_classification_model.pkl","rb")
@@ -26,8 +29,6 @@ st.title("""
          )
 file= st.file_uploader("Please upload image", type=("jpg", "png"))
 
-import cv2
-from  PIL import Image, ImageOps
 def import_and_predict(image_data):
   single_test = image_data[:, :, 0]
   single_test = single_test.reshape(1,-1)
@@ -55,8 +56,8 @@ if st.button("Predict Digit"):
   result=import_and_predict(image)
   st.success('Model has predicted the image is of  {}'.format(result))
 if st.button("About"):
-  st.header("Dr Uday Pratap Singh")
-  st.subheader("Associate Professor, Department of Computer Engineering")
+  st.header("Rohan Kandpal")
+  st.subheader("Student, Poornima Group of Institution")
   
 html_temp = """
    <div class="" style="background-color:orange;" >
