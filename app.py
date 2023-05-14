@@ -7,8 +7,7 @@ import os
 from werkzeug.utils import secure_filename
 st.set_option('deprecation.showfileUploaderEncoding', False)
 # Loading saved model from Drive.
-pickle_in = open("/content/drive/MyDrive/model.pkl","rb")
-model= pickle.load(pickle_in)
+pickle_in = open("image_classification_model.pkl","rb")
 
 html_temp = """
     <div class="" style="background-color:blue;">
