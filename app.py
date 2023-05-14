@@ -35,14 +35,14 @@ file= st.file_uploader("Please upload image", type=("jpg", "png"))
 #   return prediction
 
 def import_and_predict(image_data):
-    # Resize the image to 28x28 pixels and convert to grayscale
-    size = (8, 8)
-    image = ImageOps.grayscale(image_data.resize(size))
-    # Convert the image to a 1D array and normalize the pixel values
-    pixel_values = np.array(image).reshape(1, -1) / 255.0
-    # Make the prediction using the loaded model
-    prediction = int(model.predict(pixel_values))
+    size = (8,8)
+    image = Image.fromarray(image_data).convert('L')
+    image = ImageOps.fit(image, size, Image.ANTIALIAS)
+    single_test = np.array(image)
+    single_test = single_test.reshape(1,-1)
+    prediction = int(model.predict(single_test))
     return prediction
+
 
 if file is None:
   st.text("Please upload an Image file")
