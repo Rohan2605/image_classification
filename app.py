@@ -8,8 +8,8 @@ from werkzeug.utils import secure_filename
 from  PIL import Image, ImageOps
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
-# Loading saved model from Drive.
-model = open("image_classification_model.pkl","rb")
+
+model = pickel.load(open("image_classification_model.pkl","rb"))
 
 html_temp = """
     <div class="" style="background-color:blue;">
@@ -32,22 +32,13 @@ def import_and_predict(image_data):
   single_test = image_data[:, :, 0]
   single_test = single_test.reshape(1,-1)
   prediction = int(model.predict(single_test))
-  #image_resized = cv2.resize(image_data, (8, 8))  
-  #prediction = model.predict(image_resized.reshape(1,-1))
-  #print('Prediction Score:\n',prediction[0])
-  #thresholded = (prediction>0.5)*1
-  #print('\nThresholded Score:\n',thresholded[0])
-  #print('\nPredicted Digit:',np.where(thresholded == 1)[1][0])
-  #digit = np.where(thresholded == 1)[1][0]
-  #st.image(image_data, use_column_width=True)
   return prediction
+
 if file is None:
   st.text("Please upload an Image file")
 else:
   image=Image.open(file)
   image=np.array(image)
-  #file_bytes = np.asarray(bytearray(file.read()), dtype=np.uint8)
-  #image = cv2.imdecode(file_bytes, 1)
   st.image(image,caption='Uploaded Image.', use_column_width=True)
     
 if st.button("Predict Digit"):
