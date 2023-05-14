@@ -9,7 +9,7 @@ from  PIL import Image, ImageOps
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 # Loading saved model from Drive.
-pickle_in = open("image_classification_model.pkl","rb")
+model = open("image_classification_model.pkl","rb")
 
 html_temp = """
     <div class="" style="background-color:blue;">
@@ -32,7 +32,6 @@ def import_and_predict(image_data):
   single_test = image_data[:, :, 0]
   single_test = single_test.reshape(1,-1)
   prediction = model.predict(single_test)
-  print(prediction[0]) 
   #image_resized = cv2.resize(image_data, (8, 8))  
   #prediction = model.predict(image_resized.reshape(1,-1))
   #print('Prediction Score:\n',prediction[0])
