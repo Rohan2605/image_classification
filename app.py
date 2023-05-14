@@ -9,7 +9,7 @@ from  PIL import Image, ImageOps
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 
-model = pickel.load(open("image_classification_model.pkl","rb"))
+model = pickle.load(open("image_classification_model.pkl","rb"))
 
 html_temp = """
     <div class="" style="background-color:blue;">
