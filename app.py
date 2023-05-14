@@ -15,8 +15,8 @@ html_temp = """
     <div class="" style="background-color:blue;">
     <div class="clearfix">
     <div class="col-md-12">
-    <center><p style="font-size:40px;color:white;margin-top:10px;">Workshop on </p></center>
-    <center><p style="font-size:40px;color:white;margin-top:10px;">Artificial Intelligence & Data Science </p></center>
+    <center><p style="font-size:40px;color:white;margin-top:10px;">NSP PROJECT</p></center>
+    <center><p style="font-size:20px;color:white;margin-top:10px;">Image classification project based on Logistic Regression</p></center>
     </div>
     </div>
     </div>
@@ -61,9 +61,8 @@ if st.button("About"):
 html_temp = """
    <div class="" style="background-color:orange;" >
    <div class="clearfix">           
-   <div class="col-md-12">
-   <center><p style="font-size:20px;color:white;margin-top:10px;">Department of Computer Engineering</p></center> 
-   <center><p style="font-size:20px;color:white;margin-top:10px;">Poornima Institute of Engineering & Technology</p></center> 
+   <div class="col-md-12"> 
+   <center><p style="font-size:20px;color:white;margin-top:10px;">Poornima Group of Institution</p></center> 
    </div>
    </div>
    </div>
