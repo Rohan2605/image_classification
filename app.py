@@ -38,11 +38,11 @@ if file is None:
   st.text("Please upload an Image file")
 else:
   image=Image.open(file)
-  image=np.array(image)
-  st.image(image,caption='Uploaded Image.', use_column_width=True)
+  image_np=np.array(image)
+  st.image(image_np,caption='Uploaded Image.', use_column_width=True)
     
 if st.button("Predict Digit"):
-  result=import_and_predict(image)
+  result=import_and_predict(image_np)
   st.success('Model has predicted the image is of  {}'.format(result))
 if st.button("About"):
   st.header("Rohan Kandpal")
