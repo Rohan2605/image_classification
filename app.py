@@ -5,7 +5,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 from werkzeug.utils import secure_filename
-import cv2
 from  PIL import Image, ImageOps
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
