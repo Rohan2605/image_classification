@@ -26,7 +26,7 @@ st.title("""
         Digit Recognition
          """
          )
-file= st.file_uploader("Please upload image", type=("jpg", "png"))
+file= st.file_uploader("Please upload image", type=("jpg", "png", "jpeg"))
 
 # def import_and_predict(image_data):
 #   single_test = image_data[:, :, 0]
